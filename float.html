@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #float-button {
+            width: 30%;
+            margin-left: 35%;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const image = document.getElementById("float-img");
+            const button = document.getElementById("float-button");
+            let isLeft = true;
+            button.addEventListener("click", () => {
+                if (!isLeft) {
+                    image.style.float = 'left';
+                    button.innerText = 'RIGHT';
+                } else {
+                    image.style.float = 'right';
+                    button.innerText = 'LEFT';
+                }
+                isLeft = !isLeft;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="float-container">
+        <img src="./image.jpg" id="float-img" />
+    </div>
+    <div>
+        <button id="float-button">RIGHT</button>
+    </div>
+</body>
+
+</html>

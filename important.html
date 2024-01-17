@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #important-id {
+            background-color: blue;
+        }
+
+        .important-class {
+            background-color: gray;
+        }
+
+        p {
+            background-color: orange !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>The !important attribute is overriding styles set by class and id rules despite element rules having the lowest
+        specificity</p>
+
+    <p class="important-class">The !important attribute is overriding styles set by class and id rules despite element
+        rules having the lowest specificity</p>
+
+    <p id="important-id">The !important attribute is overriding styles set by class and id rules despite element rules
+        having the lowest specificity</p>
+
+    <p> 
+        Style:<br/>
+        &nbsp;#important-id { background-color: blue; }
+        <br/>
+        &nbsp;.important-class { background-color: gray }
+        <br/>
+        &nbsp;p { background-color: orange !important; }
+    </p>
+
+</body>
+
+</html>

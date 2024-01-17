@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #index-body {
+            background-color: #035efc;
+        }
+
+        #index-header {
+            color: orange;
+            text-align: center;
+            font-size: 48px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 700;
+        }
+
+
+        #index-dropdown-container {
+            height: 50px;
+            width: 60%;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #index-dropdown-tag {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: brown;
+            line-height: 50px;
+            height: 100%;
+            text-align: center;
+            width: 30%;
+            background-color: rgb(255, 203, 107);
+        }
+
+        #index-dropdown {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-size: 20px;
+            color: blue;
+            text-align: center;
+            border: none;
+            height: 100%;
+            display: inline;
+            width: 70%;
+        }
+
+        #index-demo-iframe {
+            background: white;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 50px;
+            height: 500px;
+            border-radius: 10px;
+            border: 3px solid orange;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const dropdown = document.getElementById("index-dropdown");
+            const iframe = document.getElementById("index-demo-iframe");
+            dropdown.addEventListener("change", () => {
+                switch (dropdown.value) {
+                    case "1":
+                        iframe.src = "./customFonts.html"; break;
+                    case "2":
+                        iframe.src = "./crispImage.html"; break;
+                    case "3":
+                        iframe.src = "./srcset.html"; break;
+                    case "4":
+                        iframe.src = "./important.html"; break;
+                    case "5":
+                        iframe.src = "./float.html"; break;
+                    case "6":
+                        iframe.src = "./zindex.html"; break;
+                    case "7":
+                        iframe.src = "./psuedoElement.html"; break;
+                    case "8":
+                        iframe.src = "./psuedoClassTransition.html"; break;
+                    case "9":
+                        iframe.src = "./grid.html"; break;
+                    case "10":
+                        iframe.src = "./flex.html"; break;
+                    case "11":
+                        iframe.src = "./positioning.html"; break;
+                    case "12":
+                        iframe.src = "./mediaQueries.html"; break;
+                    default:
+                        iframe.src = "./error.html";
+                }
+
+            });
+        }
+    </script>
+</head>
+
+<body id="index-body">
+    <p id="index-header">CSS EXERCISE</p>
+    <div id="index-dropdown-container">
+        <span id="index-dropdown-tag">CONCEPT</span>
+        <select id="index-dropdown">
+            <option value="1">custom fonts</option>
+            <option value="2">crisp image</option>
+            <option value="3">srcset</option>
+            <option value="4">!important</option>
+            <option value="5">float</option>
+            <option value="6">z-index</option>
+            <option value="7">psuedo element</option>
+            <option value="8">psuedo class & transitions</option>
+            <option value="9">grid</option>
+            <option value="10">flex</option>
+            <option value="11">positioning</option>
+            <option value="12">media queries</option>
+        </select>
+    </div>
+    <iframe id="index-demo-iframe" src="./customFonts.html">
+
+    </iframe>
+</body>
+
+</html>

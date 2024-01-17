@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #button {
+            margin-top: 100px;
+            transition-duration: 1s;
+            width: 40%;
+            margin-left: 30%;
+            height: 75px;
+            border: 3px solid blue;
+            background-color: orange;
+            border-radius: 10px;
+            color: brown;
+            font-size: 22px;
+        }
+
+        #button:hover {
+            transition-duration: 1s;
+            width: 50%;
+            margin-left: 25%;
+            height: 85px;
+            border: 3px solid orange;
+            background-color: blue;
+            border-radius: 20px;
+            color: aqua;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const button = document.getElementById("button");
+            button.addEventListener("mouseover", () => {
+                button.innerHTML = "Psuedo class & transitions :)";
+                document.body.style.transitionDuration = '1s';
+                document.body.style.backgroundColor = '#ad5a00';
+            });
+            button.addEventListener("mouseout", () => {
+                button.innerHTML = "Hover over me!";
+                document.body.style.transitionDuration = '1s';
+                document.body.style.backgroundColor = 'white';
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button id="button">Hover over me!</button>
+</body>
+
+</html>

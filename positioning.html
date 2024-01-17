@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #blue-button {
+            width: 20%;
+            margin-left: 40%;
+            margin-top: 10px;
+        }
+        #green-button {
+            width: 20%;
+            margin-left: 40%;
+            margin-top: 10px;
+        }
+
+        #box-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        #box1 {
+            margin: auto;
+            height: 300px;
+            width: 300px;
+            background-color: orange;
+        }
+
+        #box2 {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            z-index: 10;
+        }
+
+        #box3 {
+            position: sticky;
+            text-align: center;
+            top: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+
+        #empty {
+            height: 2000px;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const blueBox = document.getElementById("box2");
+            const greenBox = document.getElementById("box3");
+            const blueButton = document.getElementById("blue-button");
+            const greenButton = document.getElementById("green-button");
+            let blueAbsolute = false;
+            let greenSticky = true;
+            blueButton.addEventListener("click", () => {
+                if (blueAbsolute) {
+                    blueBox.style.position = 'relative';
+                    blueButton.innerText = 'Set blue box position to absolute';
+                } else {
+                    blueBox.style.position = 'absolute';
+                    blueButton.innerText = 'Set blue box position to relative';
+                }
+                blueAbsolute = !blueAbsolute;
+            });
+
+            greenButton.addEventListener("click", () => {
+                if (greenSticky) {
+                    greenBox.style.position = 'fixed';
+                    greenButton.innerText = 'Set green box position to sticky';
+                } else {
+                    greenBox.style.position = 'sticky';
+                    greenButton.innerText = 'Set green box position to fixed';
+                }
+                greenSticky = !greenSticky;
+            });
+        }
+    </script>
+</head>
+
+<body style="width: 100%;">
+    <div id="box-container">
+        <div id="box1">
+            <div id="box2"></div>
+        </div>
+    </div>
+    <button id="blue-button">Set blue box position to absolute</button>
+    <button id="green-button">Set green box position to fixed</button>
+    <div id="box3">
+        <span style="color: white; font-size: 50px;">Scroll!</span>
+    </div>
+    <div id="empty">
+
+    </div>
+</body>
+
+</html>

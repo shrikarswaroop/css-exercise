@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #crisp-image-container {
+            text-align: center;
+        }
+
+        #crisp-image-img {
+            margin: auto;
+        }
+
+        #crisp-image-button {
+            width: 10%;
+            margin-left: 45%;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const image = document.getElementById("crisp-image-img");
+            const button = document.getElementById("crisp-image-button");
+            let is2x = false;
+            button.addEventListener("click", () => {
+                if (!is2x) {
+                    image.style.width = '270px';
+                    button.innerText = '1X';
+                } else {
+                    image.style.width = '541px';
+                    button.innerText = '2X';
+                }
+                is2x = !is2x;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="crisp-image-container">
+        <img src="./image.jpg" id="crisp-image-img" />
+    </div>
+    <button id="crisp-image-button">2X</button>
+</body>
+
+</html>

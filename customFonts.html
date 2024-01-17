@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        #custom-font-text {
+            font-size: 32px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-weight: 100;
+        }
+
+        #custom-font-weight {
+            text-align: center;
+        }
+
+        #custom-font-slider {
+            width: 30%;
+            margin-left: 35%;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const customFontSlider = document.getElementById("custom-font-slider");
+            const weightDisplay = document.getElementById("custom-font-weight");
+            const customFontText = document.getElementById("custom-font-text");
+            customFontSlider.addEventListener("change", () => {
+                let fontWeight = customFontSlider.value;
+                weightDisplay.innerText = fontWeight;
+                customFontText.style.fontWeight = fontWeight;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p id="custom-font-text">This is in a custom font : Montserrat</p>
+    <input type="range" min="100" max="900" value="1" step="100" id="custom-font-slider">
+    <p id="custom-font-weight">100</p>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p::first-line {
+            color: blue;
+            background-color: orange;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const blueBox = document.getElementById("box2");
+            const button = document.getElementById("button");
+            let isBack = false;
+            button.addEventListener("click", () => {
+                if (isBack) {
+                    blueBox.style.zIndex = 100;
+                    button.innerText = 'Set blue box z-index to -1';
+                } else {
+                    blueBox.style.zIndex = -1;
+                    button.innerText = 'Set blue box z-index to 100';
+                }
+                isBack = !isBack;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        Only the first line's style has been set using psuedo elements.<br />
+        The other lines are unstyled.The other lines are unstyled.<br />
+        The other lines are unstyled.The other lines are unstyled.<br />
+        The other lines are unstyled.The other lines are unstyled.<br />
+        The other lines are unstyled.The other lines are unstyled.<br />
+    </p>
+</body>
+
+</html>

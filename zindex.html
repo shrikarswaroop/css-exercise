@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #button {
+            width: 30%;
+            margin-left: 35%;
+            margin-top: 80px;
+        }
+
+        #box-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        #box1 {
+            margin: auto;
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+        }
+
+        #box2 {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const blueBox = document.getElementById("box2");
+            const button = document.getElementById("button");
+            let isBack = false;
+            button.addEventListener("click", () => {
+                if (isBack) {
+                    blueBox.style.zIndex = 100;
+                    button.innerText = 'Set blue box z-index to -1';
+                } else {
+                    blueBox.style.zIndex = -1;
+                    button.innerText = 'Set blue box z-index to 100';
+                }
+                isBack = !isBack;
+            });
+        }
+    </script>
+</head>
+
+<body style="width: 100%;">
+    <div id="box-container">
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
+    <button id="button">Set blue box z-index to -1</button>
+</body>
+
+</html>
